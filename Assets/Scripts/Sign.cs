@@ -22,10 +22,16 @@ public class Sign : MonoBehaviour {
 		}
 		if (isVisible == true){
 			duration = duration - Time.deltaTime;
-			if ( duration < 0 ){
+            Color color = this.gameObject.GetComponent<SpriteRenderer>().color;
+            color.a = duration / 5;
+            this.gameObject.GetComponent<SpriteRenderer>().color = color;
+            if ( duration < 0 ){
 				this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
 				isVisible = false;
-			}
+                color.a = duration / 5;
+                this.gameObject.GetComponent<SpriteRenderer>().color = color;
+
+            }
 		}
 	}
 }
