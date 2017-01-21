@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    public bool debugSonarRays;
-
     public float moveSpeed = 5;
     public float rotationSpeed = 10;
 
@@ -49,7 +47,7 @@ public class Character : MonoBehaviour
         {
             Vector3 origin = transform.position;
             Vector3 direction = transform.forward;
-            float angle = ( sonarWidthDegrees / numRays ) * i;
+            float angle = ( ( sonarWidthDegrees / numRays ) * i ) - sonarWidthDegrees / 2.0f;
             direction = Quaternion.Euler( 0, angle, 0 ) * direction;
 
             Ray ray = new Ray( origin, direction );
@@ -57,10 +55,8 @@ public class Character : MonoBehaviour
         }
         foreach( Ray ray in Rays )
         {
-            if( debugSonarRays )
-            {
-                Debug.DrawRay( ray.origin, ray.direction *  sonarDist, Color.red, 2.0f, false );
-            }
+            Debug.DrawRay( ray.origin, ray.direction * sonarDist, Color.red, 1.0f, false );
+         
             RaycastHit rayHit;
             Physics.Raycast( ray, out rayHit, sonarDist );
             if (rayHit.transform)
