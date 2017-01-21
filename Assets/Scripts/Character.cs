@@ -10,6 +10,7 @@ public class Character : MonoBehaviour
     public int numRays = 20;
     public float sonarWidthDegrees = 60f;
     public float sonarDist = 20;
+    public DrawSonar drawSonar;
     [HideInInspector]
     public float turnAxisInput;
 
@@ -21,10 +22,10 @@ public class Character : MonoBehaviour
 
     }
 
-    private void Start()
-    {
+    //private void Start()
+    //{
 
-    }
+    //}
 
     // Update is called once per frame
     void Update()
@@ -55,16 +56,21 @@ public class Character : MonoBehaviour
         }
         foreach( Ray ray in Rays )
         {
-            Debug.DrawRay( ray.origin, ray.direction * sonarDist, Color.red, 1.0f, true);
-         
+           Debug.DrawRay( ray.origin, ray.direction * sonarDist, Color.red, 1.0f, true);
+
             RaycastHit rayHit;
-            Physics.Raycast( ray, out rayHit, sonarDist );
+            bool hasHitObject = Physics.Raycast( ray, out rayHit, sonarDist );
             if (rayHit.transform)
             {
+                rayHit.collider.gameObject.GetComponent<SonarReceiver>().distToCharacter = rayHit.distance;
                 rayHit.transform.SendMessage( "OnSonarHit", SendMessageOptions.DontRequireReceiver );
                 //Debug.Log( "Hit " + rayHit.transform.gameObject.name );
             }
+
+            Vector3 lineStart = hasHitObject ? rayHit.point : ray.direction * sonarDist;
+            //drawSonar.RenderSonar( ray.origin, lineStart, 0.1f );
         }
+
         
         return;
     }

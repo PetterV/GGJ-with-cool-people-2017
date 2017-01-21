@@ -7,8 +7,10 @@ public class SonarReceiver : MonoBehaviour {
 	public string nameOfObject;
 	public AudioClip soundOfObject;
 
-	// Use this for initialization
-	void Start () {
+    public float distToCharacter = 0.0f;
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
