@@ -11,7 +11,7 @@ public class PlaceholderTextDisplay : MonoBehaviour {
 		textToDisplay = gameObject.GetComponent<SonarReceiver>().nameOfObject;
 	}
 	
-	void SayMyName(){
-		
+	public void SayMyName(){
+		Debug.Log ("I hit a" + textToDisplay);
 	}
 }

@@ -21,7 +21,7 @@ public class SonarReceiver : MonoBehaviour {
     {
         Debug.Log( gameObject.name + "Play Sound " + "Do stuff" );
     	//For test purposes:
-
+		this.GetComponent<PlaceholderTextDisplay>().SayMyName();
 		//
 
 	}
