@@ -6,6 +6,7 @@ public class SonarReceiver : MonoBehaviour {
 
 	public string nameOfObject;
 	public AudioClip soundOfObject;
+	public GameObject mySign;
 
 	// Use this for initialization
 	void Start () {
@@ -23,6 +24,8 @@ public class SonarReceiver : MonoBehaviour {
     	//For test purposes:
 		this.GetComponent<PlaceholderTextDisplay>().SayMyName();
 		//
-
+		mySign.GetComponent<SpriteRenderer>().enabled = true;
+		mySign.GetComponent<Sign>().isVisible = true;
+		mySign.GetComponent<Sign>().duration = mySign.GetComponent<Sign>().startDuration;
 	}
 }
