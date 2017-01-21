@@ -38,7 +38,7 @@ public class CircleDrawer : MonoBehaviour
         for (int i = 0; i < Size; i++)
         {
             Theta += (2.0f * Mathf.PI * ThetaScale);
-            float spectrumSpike = Mathf.Sqrt(spectrum[i]) * radius;
+            float spectrumSpike = Mathf.Sqrt(spectrum[i]*4) * radius;
             if (i < 3 || i > 99)
                 spectrumSpike = 0;
             float x = (radius + spectrumSpike) * Mathf.Cos(Theta);
