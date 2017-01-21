@@ -13,6 +13,7 @@ public class Character : MonoBehaviour
     [HideInInspector]
     public float turnAxisInput;
 
+    private DrawSonar drawSonar;
     private CharacterController CC;
     // Use this for initialization
     void Awake()
@@ -21,10 +22,10 @@ public class Character : MonoBehaviour
 
     }
 
-    //private void Start()
-    //{
-
-    //}
+    void Start()
+    {
+        drawSonar = FindObjectOfType<DrawSonar>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -55,22 +56,22 @@ public class Character : MonoBehaviour
         }
         foreach( Ray ray in Rays )
         {
-           Debug.DrawRay( ray.origin, ray.direction * sonarDist, Color.red, 1.0f, true);
-
+            Debug.DrawRay( ray.origin, ray.direction * sonarDist, Color.red, 1.0f, true);
+        
             RaycastHit rayHit;
             bool hasHitObject = Physics.Raycast( ray, out rayHit, sonarDist );
-            if (rayHit.transform)
+            if( rayHit.transform )
             {
                 rayHit.collider.gameObject.GetComponent<SonarReceiver>().distToCharacter = rayHit.distance;
                 rayHit.transform.SendMessage( "OnSonarHit", SendMessageOptions.DontRequireReceiver );
                 //Debug.Log( "Hit " + rayHit.transform.gameObject.name );
             }
 
-            Vector3 lineStart = hasHitObject ? rayHit.point : ray.direction * sonarDist;
-            //drawSonar.RenderSonar( ray.origin, lineStart, 0.1f );
+            Vector3 vertexPoint = hasHitObject ? rayHit.point : ray.direction * sonarDist;
+            drawSonar.AddPointToSonar( vertexPoint );
         }
+        drawSonar.RenderSonar( transform.position );
 
-        
         return;
     }
 

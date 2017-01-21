@@ -31,15 +31,20 @@ public class SonarReceiver : MonoBehaviour {
     {
         Debug.Log( gameObject.name + "Play Sound " + "Do stuff" );
     	//For test purposes:
-		this.GetComponent<PlaceholderTextDisplay>().SayMyName();
+        if ( this.GetComponent<PlaceholderTextDisplay>() )
+		    this.GetComponent<PlaceholderTextDisplay>().SayMyName();
 		//
 		distanceReducer = maxSonarRange * soundDelayReductionFactor;
 		soundDelay = distToCharacter/distanceReducer;
 		// Disabled because I'm trying to solve this with 3D sound settings:
 		//this.gameObject.GetComponent<AudioSource>().volume = distToCharacter/maxSonarRange;
 		this.gameObject.GetComponent<AudioSource>().PlayDelayed(soundDelay);
-		mySign.GetComponent<SpriteRenderer>().enabled = true;
-		mySign.GetComponent<Sign>().isVisible = true;
-		mySign.GetComponent<Sign>().duration = mySign.GetComponent<Sign>().startDuration;
-	}
+		this.gameObject.GetComponent<AudioSource>().PlayOneShot(soundOfObject);
+        if ( mySign )
+        {
+			mySign.GetComponent<SpriteRenderer>().enabled = true;
+			mySign.GetComponent<Sign>().isVisible = true;
+			mySign.GetComponent<Sign>().duration = mySign.GetComponent<Sign>().startDuration;
+        }
+    }
 }
