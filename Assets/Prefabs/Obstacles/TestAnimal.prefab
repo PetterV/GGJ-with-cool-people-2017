@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 33990661558171480}
   - component: {fileID: 136090663006210804}
   - component: {fileID: 23745346738491660}
-  - component: {fileID: 114741239488963188}
   - component: {fileID: 114564145696920498}
   - component: {fileID: 82185939799856728}
   - component: {fileID: 114936653264840750}
@@ -258,20 +257,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameOfObject: Animal
   soundOfObject: {fileID: 8300000, guid: 27f9de2e6a2a446af826392014cb828c, type: 3}
-  mySign: {fileID: 1628428437462486}
   distToCharacter: 0
   soundDelayReductionFactor: 10
---- !u!114 &114741239488963188
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1188470754534812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f0e4f03b09b9439d87b45b6b3ae844a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114936653264840750
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -294,7 +281,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1188470754534812}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1

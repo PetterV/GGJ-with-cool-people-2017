@@ -15,6 +15,7 @@ public class SonarReceiver : MonoBehaviour {
 	float soundDelay = 0.0f;
 	float maxSonarRange = 10.0f;
 	float distanceReducer;
+	AudioSource audio;
 
 	//Cooldown for Ray hit
 	float cooldownTime = 0.5f;
@@ -23,6 +24,8 @@ public class SonarReceiver : MonoBehaviour {
     void Start () {
 		this.gameObject.GetComponent<MeshRenderer>().enabled = false;
         visualizationCircle = this.gameObject.GetComponentInChildren<CircleDrawer>();
+		audio = this.gameObject.GetComponent<AudioSource>();
+		audio.clip = soundOfObject;
 	}	
 	// Update is called once per frame
 	void Update () {
@@ -38,8 +41,9 @@ public class SonarReceiver : MonoBehaviour {
 			soundDelay = distToCharacter/distanceReducer;
 			// Disabled because I'm trying to solve this with 3D sound settings:
 			//this.gameObject.GetComponent<AudioSource>().volume = distToCharacter/maxSonarRange;
-			this.gameObject.GetComponent<AudioSource>().clip = soundOfObject;
-			this.gameObject.GetComponent<AudioSource>().PlayDelayed(soundDelay);
+			if (!audio.isPlaying){
+				audio.PlayDelayed(soundDelay);
+			}
 
 			// If the object is an animal, fire it's animal effect!
 			if (this.gameObject.tag == "Animal")
