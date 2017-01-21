@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23357461320392610}
   - component: {fileID: 114494162073053870}
   - component: {fileID: 114343717203759214}
+  - component: {fileID: 82338128213346182}
   m_Layer: 0
   m_Name: Tree
   m_TagString: Untagged
@@ -81,7 +82,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1754655090771338}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -113,6 +114,122 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1754655090771338}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!82 &82338128213346182
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1754655090771338}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 0
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0.0153315775
+      value: 1
+      inSlope: -3.220666
+      outSlope: -3.220666
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.0817931
+      value: 0.6462681
+      inSlope: -1.7061421
+      outSlope: -1.7061421
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.11976053
+      value: 0.6400484
+      inSlope: -4.07819
+      outSlope: -4.07819
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.12265262
+      value: 0.125
+      inSlope: -1.0195475
+      outSlope: -1.0195475
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.24530524
+      value: 0.0625
+      inSlope: -0.25488687
+      outSlope: -0.25488687
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.49061048
+      value: 0.03125
+      inSlope: -0.06372172
+      outSlope: -0.06372172
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.98122096
+      value: 0.015625
+      inSlope: -0.01593043
+      outSlope: -0.01593043
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0.0153315775
+      inSlope: -0.015337695
+      outSlope: -0.015337695
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114343717203759214
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -125,7 +242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameOfObject: Tree
-  soundOfObject: {fileID: 0}
+  soundOfObject: {fileID: 8300000, guid: 2666b3ef4ba7c47a7b3e8721cb3c5204, type: 3}
   mySign: {fileID: 1998610496059336}
 --- !u!114 &114494162073053870
 MonoBehaviour:

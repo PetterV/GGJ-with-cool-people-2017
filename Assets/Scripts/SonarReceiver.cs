@@ -10,7 +10,6 @@ public class SonarReceiver : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
 	}
 	
 	// Update is called once per frame
@@ -24,6 +23,7 @@ public class SonarReceiver : MonoBehaviour {
     	//For test purposes:
 		this.GetComponent<PlaceholderTextDisplay>().SayMyName();
 		//
+		this.gameObject.GetComponent<AudioSource>().PlayOneShot(soundOfObject);
 		mySign.GetComponent<SpriteRenderer>().enabled = true;
 		mySign.GetComponent<Sign>().isVisible = true;
 		mySign.GetComponent<Sign>().duration = mySign.GetComponent<Sign>().startDuration;
