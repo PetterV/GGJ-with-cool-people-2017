@@ -176,10 +176,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0
   rotationSpeed: 100
-  numRays: 20
+  numRays: 50
   sonarWidthDegrees: 90
   sonarDist: 30
-  drawSonar: {fileID: 0}
   turnAxisInput: 0
 --- !u!124 &124985514224230434
 Behaviour:

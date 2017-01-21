@@ -45,13 +45,11 @@ public class DrawSonar : MonoBehaviour {
     public void RenderSonar( Vector3 charPos )
     {
         List<Vector3> tempV = new List<Vector3>();
-        for( int p = 0; p < sonarPoints.Count; ++p )
+        for( int p = 0; p + 1 < sonarPoints.Count; ++p )
         {
-            if( p % 2 == 0 )
-            {
-                tempV.Add( charPos );
-            }
+            tempV.Add( charPos );
             tempV.Add( sonarPoints[p] );
+            tempV.Add( sonarPoints[p + 1] );
         }
 
         Vector3[] vertices = new Vector3[ tempV.Count ];

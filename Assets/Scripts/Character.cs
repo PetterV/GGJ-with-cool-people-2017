@@ -56,7 +56,7 @@ public class Character : MonoBehaviour
         }
         foreach( Ray ray in Rays )
         {
-            Debug.DrawRay( ray.origin, ray.direction * sonarDist, Color.red, 1.0f, true);
+            //Debug.DrawRay( ray.origin, ray.direction * sonarDist, Color.red, 1.0f, true);
         
             RaycastHit rayHit;
             bool hasHitObject = Physics.Raycast( ray, out rayHit, sonarDist );
