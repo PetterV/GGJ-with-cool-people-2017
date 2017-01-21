@@ -10,7 +10,6 @@ public class Character : MonoBehaviour
     public int numRays = 20;
     public float sonarWidthDegrees = 60f;
     public float sonarDist = 20;
-    public DrawSonar drawSonar;
     [HideInInspector]
     public float turnAxisInput;
 

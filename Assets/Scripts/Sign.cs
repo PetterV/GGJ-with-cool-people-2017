@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Sign : MonoBehaviour {
 
-	public float startDuration = 5.0f;
+	public float startDuration = 3.0f;
 	public float duration;
 	Transform target;
 	public bool isVisible = false;
@@ -23,14 +23,13 @@ public class Sign : MonoBehaviour {
 		if (isVisible == true){
 			duration = duration - Time.deltaTime;
             Color color = this.gameObject.GetComponent<SpriteRenderer>().color;
-            color.a = duration / 5;
+			color.a = duration / startDuration;
             this.gameObject.GetComponent<SpriteRenderer>().color = color;
             if ( duration < 0 ){
 				this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
 				isVisible = false;
-                color.a = duration / 5;
+				color.a = duration / startDuration;
                 this.gameObject.GetComponent<SpriteRenderer>().color = color;
-
             }
 		}
 	}
