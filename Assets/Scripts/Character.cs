@@ -60,18 +60,18 @@ public class Character : MonoBehaviour
 
             RaycastHit rayHit;
             bool hasHitObject = Physics.Raycast( ray, out rayHit, sonarDist );
-            if (rayHit.transform)
+            if( rayHit.transform )
             {
                 rayHit.collider.gameObject.GetComponent<SonarReceiver>().distToCharacter = rayHit.distance;
                 rayHit.transform.SendMessage( "OnSonarHit", SendMessageOptions.DontRequireReceiver );
                 //Debug.Log( "Hit " + rayHit.transform.gameObject.name );
             }
 
-            Vector3 lineStart = hasHitObject ? rayHit.point : ray.direction * sonarDist;
-            //drawSonar.RenderSonar( ray.origin, lineStart, 0.1f );
+            Vector3 vertexPoint = hasHitObject ? rayHit.point : ray.direction * sonarDist;
+            drawSonar.AddPointToSonar( vertexPoint );
         }
+        drawSonar.RenderSonar( transform.position );
 
-        
         return;
     }
 

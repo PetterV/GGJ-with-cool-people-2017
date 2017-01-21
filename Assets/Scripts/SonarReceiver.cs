@@ -23,11 +23,16 @@ public class SonarReceiver : MonoBehaviour {
     {
         Debug.Log( gameObject.name + "Play Sound " + "Do stuff" );
     	//For test purposes:
-		this.GetComponent<PlaceholderTextDisplay>().SayMyName();
+        if ( this.GetComponent<PlaceholderTextDisplay>() )
+		    this.GetComponent<PlaceholderTextDisplay>().SayMyName();
 		//
 		this.gameObject.GetComponent<AudioSource>().PlayOneShot(soundOfObject);
+        if ( mySign )
+        {
+
 		mySign.GetComponent<SpriteRenderer>().enabled = true;
 		mySign.GetComponent<Sign>().isVisible = true;
 		mySign.GetComponent<Sign>().duration = mySign.GetComponent<Sign>().startDuration;
-	}
+        }
+    }
 }
