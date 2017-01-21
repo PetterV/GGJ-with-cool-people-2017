@@ -60,11 +60,10 @@ public class Character : MonoBehaviour
             Physics.Raycast( ray, out rayHit, sonarDist );
             if (rayHit.transform)
             {
-                rayHit.transform.SendMessage( "OnSonarHit" );
-                Debug.Log( "Hit " + rayHit.transform.gameObject.name );
+                rayHit.transform.SendMessage( "OnSonarHit", SendMessageOptions.DontRequireReceiver );
+                //Debug.Log( "Hit " + rayHit.transform.gameObject.name );
             }
         }
-        Debug.Log( "Send Pulse" );
         
         return;
     }
