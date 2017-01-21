@@ -82,7 +82,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1754655090771338}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -243,7 +243,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameOfObject: Tree
   soundOfObject: {fileID: 8300000, guid: 2666b3ef4ba7c47a7b3e8721cb3c5204, type: 3}
-  mySign: {fileID: 1998610496059336}
+  distToCharacter: 0
+  soundDelayReductionFactor: 10
 --- !u!114 &114494162073053870
 MonoBehaviour:
   m_ObjectHideFlags: 1

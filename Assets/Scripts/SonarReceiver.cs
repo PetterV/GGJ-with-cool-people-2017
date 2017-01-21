@@ -22,7 +22,7 @@ public class SonarReceiver : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		this.gameObject.GetComponent<MeshRenderer>().enabled = false;	
+	//	this.gameObject.GetComponent<MeshRenderer>().enabled = false;	
 	}	
 	// Update is called once per frame
 	void Update () {
@@ -38,8 +38,8 @@ public class SonarReceiver : MonoBehaviour {
 			soundDelay = distToCharacter/distanceReducer;
 			// Disabled because I'm trying to solve this with 3D sound settings:
 			//this.gameObject.GetComponent<AudioSource>().volume = distToCharacter/maxSonarRange;
+			this.gameObject.GetComponent<AudioSource>().clip = soundOfObject;
 			this.gameObject.GetComponent<AudioSource>().PlayDelayed(soundDelay);
-			this.gameObject.GetComponent<AudioSource>().PlayOneShot(soundOfObject);
 
 			// If the object is an animal, fire it's animal effect!
 			if (this.gameObject.tag == "Animal")
