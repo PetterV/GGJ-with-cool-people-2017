@@ -12,8 +12,8 @@ public class SonarReceiver : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
-}	
+		this.gameObject.GetComponent<MeshRenderer>().enabled = false;	
+	}	
 	// Update is called once per frame
 	void Update () {
 		
