@@ -7,8 +7,9 @@ public class CircleDrawer : MonoBehaviour
 
     public float startDuration = 3.0f;
 	public float duration;
-    public bool isVisible = false; // CHANGE TO FALSE
+    public bool isVisible = false;
 
+    Transform target;
     public float ThetaScale = 0.01f;
     public float radius = 3.0f;
     private int Size;
@@ -20,7 +21,7 @@ public class CircleDrawer : MonoBehaviour
     {
         LineDrawer = GetComponent<LineRenderer>();
         VoiceSound = GetComponentInParent<AudioSource>();
-        //duration = startDuration; // REMOVE
+        target = GameObject.Find("Character").transform;
     }
 
     void Update()
@@ -28,6 +29,8 @@ public class CircleDrawer : MonoBehaviour
         // Audio Analysis
         float[] spectrum = new float[1024];
         VoiceSound.GetSpectrumData(spectrum, 0, FFTWindow.Hamming);
+
+        transform.rotation = target.rotation;
 
         Theta = 0f;
         Size = (int)((1f / ThetaScale) + 1f);
