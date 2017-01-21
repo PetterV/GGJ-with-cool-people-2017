@@ -24,7 +24,7 @@ public class Character : MonoBehaviour
 
     void Start()
     {
-        FindObjectOfType<DrawSonar>();
+        drawSonar = FindObjectOfType<DrawSonar>();
     }
 
     // Update is called once per frame
@@ -56,8 +56,8 @@ public class Character : MonoBehaviour
         }
         foreach( Ray ray in Rays )
         {
-           Debug.DrawRay( ray.origin, ray.direction * sonarDist, Color.red, 1.0f, true);
-
+            Debug.DrawRay( ray.origin, ray.direction * sonarDist, Color.red, 1.0f, true);
+        
             RaycastHit rayHit;
             bool hasHitObject = Physics.Raycast( ray, out rayHit, sonarDist );
             if( rayHit.transform )

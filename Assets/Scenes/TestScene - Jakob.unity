@@ -402,40 +402,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 20185499911726340, guid: edfa2d3c0f764614c81b610ca093ecbf,
-        type: 2}
-      propertyPath: field of view
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 114960382877153730, guid: edfa2d3c0f764614c81b610ca093ecbf,
-        type: 2}
-      propertyPath: shader
-      value: 
-      objectReference: {fileID: 4800000, guid: 476675317c44d4cbda0090026893433e, type: 3}
     - target: {fileID: 114960382877153730, guid: edfa2d3c0f764614c81b610ca093ecbf,
         type: 2}
       propertyPath: drawSonar
       value: 
       objectReference: {fileID: 1974631036}
-    - target: {fileID: 1873314334651632, guid: edfa2d3c0f764614c81b610ca093ecbf, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 20185499911726340, guid: edfa2d3c0f764614c81b610ca093ecbf,
-        type: 2}
-      propertyPath: near clip plane
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114960382877153730, guid: edfa2d3c0f764614c81b610ca093ecbf,
-        type: 2}
-      propertyPath: sonarWidthDegrees
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 114960382877153730, guid: edfa2d3c0f764614c81b610ca093ecbf,
-        type: 2}
-      propertyPath: sonarDist
-      value: 30
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: edfa2d3c0f764614c81b610ca093ecbf, type: 2}
   m_IsPrefabParent: 0
@@ -808,8 +779,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c234a8e30c6c3947863c2879493453f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shader: {fileID: 0}
-  sonarTime: 0
+  shader: {fileID: 4800000, guid: 476675317c44d4cbda0090026893433e, type: 3}
+  sonarTime: 1
 --- !u!4 &1974631037
 Transform:
   m_ObjectHideFlags: 0
@@ -817,7 +788,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1974631033}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.3187163, y: -0.1348728, z: 3.7844944}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
