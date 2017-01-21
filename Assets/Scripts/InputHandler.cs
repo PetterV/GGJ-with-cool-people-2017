@@ -14,5 +14,10 @@ public class InputHandler : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         character.turnAxisInput = Input.GetAxis( "Horizontal" );
+
+        if( Input.GetButtonDown( "AButton" ) )
+        {
+            character.SonarPulse();
+        }
     }
 }
