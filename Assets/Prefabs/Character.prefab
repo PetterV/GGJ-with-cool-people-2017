@@ -56,13 +56,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1873314334651632}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.3, z: 0}
+  m_LocalRotation: {x: 0.09680122, y: 0, z: 0, w: 0.99530375}
+  m_LocalPosition: {x: 0, y: 1.13, z: -0.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4207961364067940}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 11.11, y: 0, z: 0}
 --- !u!4 &4207961364067940
 Transform:
   m_ObjectHideFlags: 1
@@ -93,9 +93,9 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.1
   far clip plane: 1000
-  field of view: 130
+  field of view: 70
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -117,9 +117,9 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1277779552305602}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -176,9 +176,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0
   rotationSpeed: 100
-  numRays: 20
-  sonarWidthDegrees: 60
-  sonarDist: 20
+  numRays: 50
+  sonarWidthDegrees: 90
+  sonarDist: 30
   turnAxisInput: 0
 --- !u!124 &124985514224230434
 Behaviour:

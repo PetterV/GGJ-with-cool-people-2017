@@ -23,8 +23,6 @@ public class SonarReceiver : MonoBehaviour {
     // Use this for initialization
     void Start () {
 		this.gameObject.GetComponent<MeshRenderer>().enabled = false;	
-		this.gameObject.GetComponent<AudioSource>().clip = soundOfObject;
-		maxSonarRange = GameObject.Find("Character").GetComponent<Character>().sonarDist;
 	}	
 	// Update is called once per frame
 	void Update () {
