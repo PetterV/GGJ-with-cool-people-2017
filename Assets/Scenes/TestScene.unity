@@ -109,7 +109,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &17520392
 AudioListener:
   m_ObjectHideFlags: 0
@@ -381,7 +381,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &833088466
 Transform:
   m_ObjectHideFlags: 0
@@ -506,7 +506,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4105864132283682, guid: 60c39e07ff414f2408743135f98adad7, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.8469033
+      value: 4.57
       objectReference: {fileID: 0}
     - target: {fileID: 4105864132283682, guid: 60c39e07ff414f2408743135f98adad7, type: 2}
       propertyPath: m_LocalPosition.y
@@ -792,6 +792,16 @@ Prefab:
     - target: {fileID: 4207961364067940, guid: edfa2d3c0f764614c81b610ca093ecbf, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114960382877153730, guid: edfa2d3c0f764614c81b610ca093ecbf,
+        type: 2}
+      propertyPath: debugSonarRays
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114960382877153730, guid: edfa2d3c0f764614c81b610ca093ecbf,
+        type: 2}
+      propertyPath: moveSpeed
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: edfa2d3c0f764614c81b610ca093ecbf, type: 2}

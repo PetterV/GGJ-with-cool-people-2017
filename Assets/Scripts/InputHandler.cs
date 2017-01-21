@@ -15,7 +15,7 @@ public class InputHandler : MonoBehaviour {
 	void Update () {
         character.turnAxisInput = Input.GetAxis( "Horizontal" );
 
-        if( Input.GetButtonDown( "AButton" ) )
+        if( Input.GetButtonDown( "SonarButton" ) )
         {
             character.SonarPulse();
         }
