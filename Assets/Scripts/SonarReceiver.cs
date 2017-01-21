@@ -6,8 +6,7 @@ public class SonarReceiver : MonoBehaviour {
 
 	public string nameOfObject;
 	public AudioClip soundOfObject;
-	//References to mySign removed as Rufus implements good circle stuff
-	//public GameObject mySign;
+    private CircleDrawer visualizationCircle;
 
     public float distToCharacter = 0.0f;
 
@@ -22,7 +21,8 @@ public class SonarReceiver : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		this.gameObject.GetComponent<MeshRenderer>().enabled = false;	
+		this.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        visualizationCircle = this.gameObject.GetComponentInChildren<CircleDrawer>();
 	}	
 	// Update is called once per frame
 	void Update () {
@@ -46,14 +46,8 @@ public class SonarReceiver : MonoBehaviour {
 				this.gameObject.GetComponent<Animal>().AnimalHit();
 
 			cooldownTime = 1.0f;
-			/*
-			if ( mySign )
-	        {
-				mySign.GetComponent<SpriteRenderer>().enabled = true;
-				mySign.GetComponent<Sign>().isVisible = true;
-				mySign.GetComponent<Sign>().duration = mySign.GetComponent<Sign>().startDuration;
-	        }
-	        */
+            if (visualizationCircle)
+                visualizationCircle.StartTimer();
 		}
     }
 }
