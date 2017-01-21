@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SonarReceiver : MonoBehaviour {
 
+	public string nameOfObject;
+	public AudioClip soundOfObject;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -17,5 +20,9 @@ public class SonarReceiver : MonoBehaviour {
     void OnSonarHit()
     {
         Debug.Log( gameObject.name + "Play Sound " + "Do stuff" );
-    }
+    	//For test purposes:
+
+		//
+
+	}
 }
