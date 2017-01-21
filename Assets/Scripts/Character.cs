@@ -13,6 +13,7 @@ public class Character : MonoBehaviour
     [HideInInspector]
     public float turnAxisInput;
 
+    private DrawSonar drawSonar;
     private CharacterController CC;
     // Use this for initialization
     void Awake()
@@ -21,10 +22,10 @@ public class Character : MonoBehaviour
 
     }
 
-    //private void Start()
-    //{
-
-    //}
+    void Start()
+    {
+        FindObjectOfType<DrawSonar>();
+    }
 
     // Update is called once per frame
     void Update()
