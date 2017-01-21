@@ -5,6 +5,7 @@ using UnityEngine;
 public class InputHandler : MonoBehaviour {
 
     public Character character;
+	public bool movementOn = true;
 
 	// Use this for initialization
 	void Start () {
@@ -13,11 +14,13 @@ public class InputHandler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        character.turnAxisInput = Input.GetAxis( "Horizontal" );
+		if ( movementOn ){
+	        character.turnAxisInput = Input.GetAxis( "Horizontal" );
 
-        if( Input.GetButtonDown( "SonarButton" ) )
-        {
-            character.SonarPulse();
-        }
+	        if( Input.GetButtonDown( "SonarButton" ) )
+	        {
+	            character.SonarPulse();
+	        }
+		}
     }
 }
