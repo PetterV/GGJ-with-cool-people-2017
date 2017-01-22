@@ -53,6 +53,7 @@ public class DrawSonar : MonoBehaviour {
     public void RenderSonar( Vector3 charPos, float length )
     {
         mat.SetFloat( "_MaxLength", length );
+        mat.SetFloat( "_PulseWidth", ( pulseWidth ) );
         mat.SetFloat( "_DistRatio", ( 0.0f ));
         mat.SetVector( "_PlayerPos", new Vector4( charPos.x, charPos.y, charPos.z, 1.0f ) );
         
