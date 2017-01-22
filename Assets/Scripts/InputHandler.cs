@@ -17,10 +17,14 @@ public class InputHandler : MonoBehaviour {
 		if ( movementOn ){
 	        character.turnAxisInput = Input.GetAxis( "Horizontal" );
 
-	        if( Input.GetButtonDown( "SonarButton" ) )
-	        {
-	            character.SonarPulse();
-	        }
-		}
+            if( Input.GetButtonDown( "SonarButton" ) )
+            {
+                character.BigSonarPulse();
+            }
+            if( Input.GetButtonDown( "SmallSonar" ) )
+            {
+                character.SmallSonarPulse();
+            }
+        }
     }
 }

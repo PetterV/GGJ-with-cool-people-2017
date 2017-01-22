@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +9,8 @@ public class Character : MonoBehaviour
     public float rotationSpeed = 10;
 
     public int numRays = 20;
-    public float sonarWidthDegrees = 60f;
+    public float sonarWidthDegreesBig = 90f;
+    public float sonarWidthDegreesSmall = 20f;
     public float sonarDist = 20;
     [HideInInspector]
     public float turnAxisInput;
@@ -41,14 +43,25 @@ public class Character : MonoBehaviour
         CC.Move( moveVector );
     }
 
-    public void SonarPulse()
+    public void BigSonarPulse()
+    {
+        SonarPulse( sonarWidthDegreesBig );
+    }
+
+    public void SmallSonarPulse()
+    {
+        SonarPulse( sonarWidthDegreesSmall );
+    }
+
+
+    public void SonarPulse( float width )
     {
         List<Ray> Rays = new List<Ray>();
         for( int i = 0; i < numRays; ++i )
         {
             Vector3 origin = transform.position;
             Vector3 direction = transform.forward;
-            float angle = ( ( sonarWidthDegrees / numRays ) * i ) - sonarWidthDegrees / 2.0f;
+            float angle = ( ( width / numRays ) * i ) - width / 2.0f;
             direction = Quaternion.Euler( 0, angle, 0 ) * direction;
 
             Ray ray = new Ray( origin, direction );
