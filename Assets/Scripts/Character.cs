@@ -80,28 +80,19 @@ public class Character : MonoBehaviour
         }
 
         List<Transform> hitObj = new List<Transform>();
+        var hitList = new List<RaycastHit>();
         foreach( Ray ray in Rays )
         {
             RaycastHit rayHit;
             bool hasHitObject = Physics.Raycast( ray, out rayHit, sonarDist );
-
             if( hasHitObject )
             {
-                Transform curTrans = rayHit.collider.transform;
+                hitList.Add( rayHit );
 
-                if ( hitObj.Contains( curTrans ) && curTrans.gameObject.GetComponent<SonarReceiver>().distToCharacter > rayHit.distance )
-                {  
-                    curTrans.gameObject.GetComponent<SonarReceiver>().distToCharacter = rayHit.distance;
-                    curTrans.gameObject.GetComponent<SonarReceiver>().hitpos = rayHit.point;
-                }
-                else
+                if( !hitObj.Contains( rayHit.collider.transform ) )
                 {
-                    curTrans.gameObject.GetComponent<SonarReceiver>().distToCharacter = rayHit.distance;
-                    curTrans.gameObject.GetComponent<SonarReceiver>().hitpos = rayHit.point;
-                    hitObj.Add( curTrans );
+                    hitObj.Add( rayHit.collider.transform );
                 }
-
-                //Debug.Log( "Hit " + rayHit.transform.gameObject.name );
             }
             //Debug.DrawRay( ray.origin, ray.direction * ( hasHitObject ? rayHit.distance : sonarDist ), Color.red, 1.0f, true );
 
@@ -110,10 +101,26 @@ public class Character : MonoBehaviour
             drawSonar.AddPointToSonar( vertexPoint );
         }
 
-        foreach( Transform t in hitObj )
+        while ( hitObj.Count > 0 )
         {
+            float dist = Mathf.Infinity;
+            Vector3 hitpos = new Vector3();
+            Transform t = hitObj[ 0 ];
+            foreach( var r in hitList )
+            {
+                if( r.collider.transform == t && r.distance < dist )
+                {
+                    dist = r.distance;
+                    hitpos = r.point;
+                    hitpos.y = 1;
+                    t.GetComponent<SonarReceiver>().hitpos = hitpos;
+                    t.GetComponent<SonarReceiver>().distToCharacter = dist;
+                }
+            }
             t.SendMessage( "OnSonarHit", SendMessageOptions.DontRequireReceiver );
+            hitObj.RemoveAt ( 0 );
         }
+
 
         Vector3 charPos = transform.position;
         charPos.y = 0.1f;

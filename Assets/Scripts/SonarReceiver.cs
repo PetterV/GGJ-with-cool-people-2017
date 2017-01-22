@@ -55,6 +55,7 @@ public class SonarReceiver : MonoBehaviour {
                 visualizationCircle.StartTimer(soundDelay);
             }
             visualizationCircle.transform.position = hitpos;
+            Debug.Log( distToCharacter );
 
             //}
 
