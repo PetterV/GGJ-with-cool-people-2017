@@ -141,7 +141,7 @@ public class CampaignManager : MonoBehaviour {
 			animalText.GetComponent<Text>().text = "The TOAD understands now.";
 			if (changeTimer > messageDuration){
 				//Descriptiong of next target
-				animalText.GetComponent<Text>().text = "Seek the SNAKE by the STAGNANT POND";
+				animalText.GetComponent<Text>().text = "Seek the FROG by the STAGNANT POND";
 				isWaitingToChangeTo = isWaitingToChangeTo + 1;
 				changeTimer = 0f;
 			}
@@ -150,7 +150,7 @@ public class CampaignManager : MonoBehaviour {
 		if (currentCampaignTargetOrder == 10 && isWaitingToChangeTo == 10){
 
 			//Notification about completion of this stage
-			animalText.GetComponent<Text>().text = "The SNAKE understands now.";
+			animalText.GetComponent<Text>().text = "The FROG understands now.";
 			if (changeTimer > messageDuration){
 				//Descriptiong of next target
 				animalText.GetComponent<Text>().text = "Seek the FOX UNSAID by the STONE RUINS";
