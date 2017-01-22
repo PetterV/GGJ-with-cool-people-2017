@@ -329,7 +329,7 @@ MonoBehaviour:
   nameOfObject: Precarious Branch
   soundOfObject: {fileID: 8300000, guid: 16edd23cd79bf40d596e0dc7ef33d148, type: 3}
   distToCharacter: 0
-  soundDelayReductionFactor: 10
+  soundDelayReductionFactor: 1
 --- !u!114 &114165449246599958
 MonoBehaviour:
   m_ObjectHideFlags: 1

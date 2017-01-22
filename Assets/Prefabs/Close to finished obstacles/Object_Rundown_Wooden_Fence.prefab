@@ -356,7 +356,7 @@ MonoBehaviour:
   nameOfObject: Rundown Wooden Fence
   soundOfObject: {fileID: 8300000, guid: 9b437c58467e3439ca00278848967481, type: 3}
   distToCharacter: 0
-  soundDelayReductionFactor: 10
+  soundDelayReductionFactor: 1
 --- !u!120 &120601143095571286
 LineRenderer:
   m_ObjectHideFlags: 1

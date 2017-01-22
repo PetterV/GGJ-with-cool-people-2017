@@ -340,7 +340,7 @@ MonoBehaviour:
   nameOfObject: Anthill
   soundOfObject: {fileID: 8300000, guid: 03f05cf53b90d4f1e8392a2303679d98, type: 3}
   distToCharacter: 0
-  soundDelayReductionFactor: 10
+  soundDelayReductionFactor: 1
 --- !u!114 &114811088808570092
 MonoBehaviour:
   m_ObjectHideFlags: 1

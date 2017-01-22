@@ -345,7 +345,7 @@ MonoBehaviour:
   nameOfObject: Overgrown Well
   soundOfObject: {fileID: 8300000, guid: 0b93bff37b9da45dc9d63745b5869e12, type: 3}
   distToCharacter: 0
-  soundDelayReductionFactor: 10
+  soundDelayReductionFactor: 1
 --- !u!114 &114875066613382262
 MonoBehaviour:
   m_ObjectHideFlags: 1

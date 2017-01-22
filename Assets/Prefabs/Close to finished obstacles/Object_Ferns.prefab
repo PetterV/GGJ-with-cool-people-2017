@@ -345,7 +345,7 @@ MonoBehaviour:
   nameOfObject: Ferns
   soundOfObject: {fileID: 8300000, guid: c3dc9aecc67d345529f5a7cd5f1673ee, type: 3}
   distToCharacter: 0
-  soundDelayReductionFactor: 10
+  soundDelayReductionFactor: 1
 --- !u!114 &114897409860446488
 MonoBehaviour:
   m_ObjectHideFlags: 1

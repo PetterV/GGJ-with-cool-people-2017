@@ -58,10 +58,14 @@ public class CircleDrawer : MonoBehaviour
 		}
     }
 
-    public void StartTimer()
+	public void StartTimer(float delayedTime)
     {
-        LineDrawer.enabled = true;
-        isVisible = true;
-        duration = startDuration;
+		Invoke("RealStartTimer", delayedTime);
     }
+
+	void RealStartTimer(){
+		LineDrawer.enabled = true;
+		isVisible = true;
+		duration = startDuration;
+	}
 }

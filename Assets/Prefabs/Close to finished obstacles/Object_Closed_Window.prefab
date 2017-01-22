@@ -329,7 +329,7 @@ MonoBehaviour:
   nameOfObject: Closed Window
   soundOfObject: {fileID: 8300000, guid: 8e47ea4e144f4434389a6393032f8728, type: 3}
   distToCharacter: 0
-  soundDelayReductionFactor: 10
+  soundDelayReductionFactor: 1
 --- !u!114 &114812241368590138
 MonoBehaviour:
   m_ObjectHideFlags: 1

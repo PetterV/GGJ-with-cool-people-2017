@@ -356,7 +356,7 @@ MonoBehaviour:
   nameOfObject: Closed Door
   soundOfObject: {fileID: 8300000, guid: 2d1343b2334374c6f9d611dea25bcc7f, type: 3}
   distToCharacter: 0
-  soundDelayReductionFactor: 10
+  soundDelayReductionFactor: 1
 --- !u!120 &120295482842618384
 LineRenderer:
   m_ObjectHideFlags: 1
