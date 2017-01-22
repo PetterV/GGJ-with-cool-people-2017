@@ -8,6 +8,7 @@ public class CircleDrawer : MonoBehaviour
     public float startDuration = 3.0f;
 	public float duration;
     public bool isVisible = false;
+    public float startAlpha = 1.0f;
 
     Transform target;
     public float ThetaScale = 0.01f;
@@ -47,8 +48,8 @@ public class CircleDrawer : MonoBehaviour
         }
         if (isVisible == true){
 			duration = duration - Time.deltaTime;
-            LineDrawer.endColor = new Color(1.0F, 1.0F, 1.0F, duration / startDuration);
-            LineDrawer.startColor = new Color(1.0F, 1.0F, 1.0F, duration / startDuration);
+            LineDrawer.endColor = new Color(1.0F, 1.0F, 1.0F, duration * startAlpha / startDuration);
+            LineDrawer.startColor = new Color(1.0F, 1.0F, 1.0F, duration * startAlpha / startDuration);
             if ( duration < 0 ){
 				LineDrawer.enabled = false;
 				isVisible = false;
@@ -67,5 +68,5 @@ public class CircleDrawer : MonoBehaviour
 		LineDrawer.enabled = true;
 		isVisible = true;
 		duration = startDuration;
-	}
+    }
 }

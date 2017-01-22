@@ -46,8 +46,12 @@ public class SonarReceiver : MonoBehaviour {
 			
 			//if (!audio.isPlaying){
 				audio.PlayDelayed(soundDelay);
-				if (visualizationCircle)
-					visualizationCircle.StartTimer(soundDelay);
+            if (visualizationCircle)
+            {
+                visualizationCircle.startAlpha = 1 - soundDelayReductionFactor;
+                Debug.Log(visualizationCircle.startAlpha);
+                visualizationCircle.StartTimer(soundDelay);
+            }
 		
 			//}
 
