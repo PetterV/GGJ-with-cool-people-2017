@@ -70,7 +70,7 @@ public class Character : MonoBehaviour
             Vector3 vertexPoint = hasHitObject ? rayHit.point : ray.direction * sonarDist;
             drawSonar.AddPointToSonar( vertexPoint );
         }
-        drawSonar.RenderSonar( transform.position );
+        drawSonar.RenderSonar( transform.position, sonarDist );
 
         return;
     }

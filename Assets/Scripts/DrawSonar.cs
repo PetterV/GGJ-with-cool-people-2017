@@ -9,11 +9,13 @@ public class DrawSonar : MonoBehaviour {
     public Shader shader;
     private Mesh sonarMesh;
     private Material lmat;
-    public float sonarTime = 1.0f;
+    public float sonarTime = 5.0f;
+    public float pulseWidth = 5.0f;
     private float currentSonarTime;
     private bool sonarDirtyFlag = false;
     private List<Vector3> sonarPoints;
 
+    Material mat;
     Mesh mesh;    
     void Awake()
     {
@@ -21,11 +23,18 @@ public class DrawSonar : MonoBehaviour {
         sonarPoints = new List<Vector3>();
     }
 
+    private void Start()
+    {
+        mat = gameObject.GetComponent<Renderer>().material;
+        mat.SetFloat( "_PulseWidth", ( pulseWidth ));
+    } 
+
     // Update is called once per frame
     void Update()
     {
         if ( currentSonarTime > 0.0f && sonarDirtyFlag )
         {
+            mat.SetFloat( "_DistRatio", ( 1.0f - ( currentSonarTime / sonarTime ) ) );
             currentSonarTime -= Time.deltaTime;
         }
         else
@@ -42,8 +51,10 @@ public class DrawSonar : MonoBehaviour {
         currentSonarTime = sonarTime;
     }
 
-    public void RenderSonar( Vector3 charPos )
+    public void RenderSonar( Vector3 charPos, float length )
     {
+        mat.SetFloat( "_MaxLength", length );
+        mat.SetFloat( "_DistRatio", 0.2f ); 
         List<Vector3> tempV = new List<Vector3>();
         for( int p = 0; p + 1 < sonarPoints.Count; ++p )
         {
