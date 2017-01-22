@@ -2,6 +2,7 @@
 	Properties {
 		_MainTex ("Texture", 2D) = "white" {}
 		_DistRatio ("DistanceFromChar", Float ) = 0.5
+		_PlayerPos ( "Player position", Vector ) = (0,0,0,0)
 
 		//_DissolveAmount ("Dissolve Ammount", Range(0,1) ) = 0
 		_MaxLength ("Max Length", Float ) = 10
@@ -37,6 +38,7 @@
 			float _MaxLength;
 			float _PulseWidth;
 			float _DistRatio;
+			float4 _PlayerPos;
 
 			//float4x4 position = unity_ObjectToWorld;
 
@@ -55,10 +57,7 @@
 			//Color it in
 			fixed4 fragmentFunction(v2f IN) : SV_Target{
 				float desiredDist = _DistRatio * _MaxLength;
-				float dist = distance(
-								IN.worldPos,
-               					float4(0.0, 0.0, 0.0, 1.0)
-               					);
+				float dist = distance( IN.worldPos, _PlayerPos );
 
 				if ( dist < desiredDist && dist > desiredDist - _PulseWidth )
 				{

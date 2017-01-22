@@ -54,6 +54,7 @@ public class Character : MonoBehaviour
             Ray ray = new Ray( origin, direction );
             Rays.Add( ray );
         }
+        
         foreach( Ray ray in Rays )
         {
             //Debug.DrawRay( ray.origin, ray.direction * sonarDist, Color.red, 1.0f, true);
@@ -68,9 +69,10 @@ public class Character : MonoBehaviour
             }
 
             Vector3 vertexPoint = hasHitObject ? rayHit.point : ray.direction * sonarDist;
+            vertexPoint.y = 0.1f;
             drawSonar.AddPointToSonar( vertexPoint );
         }
-        drawSonar.RenderSonar( transform.position, sonarDist );
+        drawSonar.RenderSonar( transform.position , sonarDist );
 
         return;
     }

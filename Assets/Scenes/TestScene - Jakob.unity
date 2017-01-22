@@ -304,6 +304,11 @@ Prefab:
       propertyPath: m_Name
       value: SonarReceiver (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114017342001342144, guid: 60c39e07ff414f2408743135f98adad7,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60c39e07ff414f2408743135f98adad7, type: 2}
   m_IsPrefabParent: 0
@@ -354,6 +359,11 @@ Prefab:
     - target: {fileID: 1252202156235772, guid: 60c39e07ff414f2408743135f98adad7, type: 2}
       propertyPath: m_Name
       value: SonarReceiver (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114017342001342144, guid: 60c39e07ff414f2408743135f98adad7,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60c39e07ff414f2408743135f98adad7, type: 2}
@@ -463,13 +473,14 @@ GameObject:
   - component: {fileID: 1102546616}
   - component: {fileID: 1102546615}
   - component: {fileID: 1102546614}
+  - component: {fileID: 1102546618}
   m_Layer: 0
   m_Name: Quad (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &1102546614
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -529,12 +540,23 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1102546613}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.21, y: 1.03, z: 4.722}
-  m_LocalScale: {x: 2.1037807, y: 2.103781, z: 2.103781}
+  m_LocalPosition: {x: 0.63, y: 0.3, z: 0}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1102546618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1102546613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13874ae3b3b63ee40936e1cb33e4627a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1330122214
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,6 +633,11 @@ Prefab:
       propertyPath: m_Name
       value: SonarReceiver (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 114017342001342144, guid: 60c39e07ff414f2408743135f98adad7,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60c39e07ff414f2408743135f98adad7, type: 2}
   m_IsPrefabParent: 0
@@ -661,6 +688,11 @@ Prefab:
     - target: {fileID: 1252202156235772, guid: 60c39e07ff414f2408743135f98adad7, type: 2}
       propertyPath: m_Name
       value: SonarReceiver (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114017342001342144, guid: 60c39e07ff414f2408743135f98adad7,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60c39e07ff414f2408743135f98adad7, type: 2}
@@ -783,6 +815,16 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a1af6cf826b8fba4e81c5f192af3f893, type: 2}
+    - target: {fileID: 114872823531131850, guid: a6018c799f8402e469c25142340f5368,
+        type: 2}
+      propertyPath: sonarTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114872823531131850, guid: a6018c799f8402e469c25142340f5368,
+        type: 2}
+      propertyPath: pulseWidth
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a6018c799f8402e469c25142340f5368, type: 2}
   m_IsPrefabParent: 0
@@ -834,6 +876,11 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 114017342001342144, guid: 60c39e07ff414f2408743135f98adad7,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60c39e07ff414f2408743135f98adad7, type: 2}
   m_IsPrefabParent: 0

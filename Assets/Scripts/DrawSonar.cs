@@ -26,7 +26,7 @@ public class DrawSonar : MonoBehaviour {
     private void Start()
     {
         mat = gameObject.GetComponent<Renderer>().material;
-        mat.SetFloat( "_PulseWidth", ( pulseWidth ));
+        mat.SetFloat( "_DistRatio", ( pulseWidth ) );
     } 
 
     // Update is called once per frame
@@ -54,7 +54,9 @@ public class DrawSonar : MonoBehaviour {
     public void RenderSonar( Vector3 charPos, float length )
     {
         mat.SetFloat( "_MaxLength", length );
-        mat.SetFloat( "_DistRatio", 0.2f ); 
+        mat.SetFloat( "_DistRatio", 0.2f );
+        mat.SetVector( "_PlayerPos", new Vector4( charPos.x, charPos.y, charPos.z, 1.0f ) );
+        
         List<Vector3> tempV = new List<Vector3>();
         for( int p = 0; p + 1 < sonarPoints.Count; ++p )
         {
@@ -80,6 +82,7 @@ public class DrawSonar : MonoBehaviour {
 
         sonarDirtyFlag = true;
         currentSonarTime = sonarTime;
+        sonarPoints.Clear();
         //AddLine( sonarMesh, MakeQuad( s, e, w ), false );
     }
 

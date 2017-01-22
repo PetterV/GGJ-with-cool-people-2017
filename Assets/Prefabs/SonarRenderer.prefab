@@ -92,4 +92,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: 476675317c44d4cbda0090026893433e, type: 3}
-  sonarTime: 1
+  sonarTime: 3
+  pulseWidth: 1
