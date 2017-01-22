@@ -11,10 +11,11 @@ public class SonarReceiver : MonoBehaviour {
     public float distToCharacter = 0.0f;
 
 	// Stuff dealing with the delay of sounds playing
-	public float soundDelayReductionFactor = 3;
+	float soundDelayReductionFactor;
 	float soundDelay = 0.0f;
 	float maxSonarRange = 10.0f;
 	float distanceReducer;
+	float sonarTime;
 	AudioSource audio;
 
 	//Cooldown for Ray hit
@@ -26,6 +27,7 @@ public class SonarReceiver : MonoBehaviour {
         visualizationCircle = this.gameObject.GetComponentInChildren<CircleDrawer>();
 		audio = this.gameObject.GetComponent<AudioSource>();
 		audio.clip = soundOfObject;
+		sonarTime = GameObject.Find("SonarRenderer").GetComponent<DrawSonar>().sonarTime;
 	}	
 	// Update is called once per frame
 	void Update () {
@@ -38,13 +40,14 @@ public class SonarReceiver : MonoBehaviour {
 		if ( cooldownTime < 0.01f){
 	        Debug.Log( gameObject.name + "Play Sound " + "Do stuff" );
 			soundDelayReductionFactor = distToCharacter/maxSonarRange;
-			soundDelay = soundDelayReductionFactor * GameObject.Find("SonarRenderer").GetComponent<DrawSonar>().sonarTime;
+			soundDelay = soundDelayReductionFactor * sonarTime;
 
 			
 			if (!audio.isPlaying){
 				audio.PlayDelayed(soundDelay);
 				if (visualizationCircle)
 					visualizationCircle.StartTimer(soundDelay);
+		
 			}
 
 			// If the object is an animal, fire it's animal effect!

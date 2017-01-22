@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 82388376781309674}
   - component: {fileID: 114412144917121170}
   m_Layer: 0
-  m_Name: Animal_Fox Unsaid
+  m_Name: Animal_Fox_Unsaid
   m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

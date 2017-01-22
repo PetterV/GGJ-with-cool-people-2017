@@ -356,7 +356,7 @@ MonoBehaviour:
   nameOfObject: Flowers
   soundOfObject: {fileID: 8300000, guid: 88e8db8971a3644e7b2c1c819198df9e, type: 3}
   distToCharacter: 0
-  soundDelayReductionFactor: 10
+  soundDelayReductionFactor: 1
 --- !u!120 &120969653659511236
 LineRenderer:
   m_ObjectHideFlags: 1

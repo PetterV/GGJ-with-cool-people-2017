@@ -345,7 +345,7 @@ MonoBehaviour:
   nameOfObject: Tree
   soundOfObject: {fileID: 8300000, guid: 512bc2213a20d4e27b2cdfeb9814f376, type: 3}
   distToCharacter: 0
-  soundDelayReductionFactor: 10
+  soundDelayReductionFactor: 1
 --- !u!114 &114722457248020848
 MonoBehaviour:
   m_ObjectHideFlags: 1

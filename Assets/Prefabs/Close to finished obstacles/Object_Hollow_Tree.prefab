@@ -329,7 +329,7 @@ MonoBehaviour:
   nameOfObject: Hollow Tree
   soundOfObject: {fileID: 8300000, guid: 59ce0087c985d4181871c3685c0586ed, type: 3}
   distToCharacter: 0
-  soundDelayReductionFactor: 10
+  soundDelayReductionFactor: 1
 --- !u!114 &114758860598618842
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -329,7 +329,7 @@ MonoBehaviour:
   nameOfObject: Mossy Rock
   soundOfObject: {fileID: 8300000, guid: 88200cd85664d4b39b1cdff1725746eb, type: 3}
   distToCharacter: 0
-  soundDelayReductionFactor: 10
+  soundDelayReductionFactor: 1
 --- !u!114 &114572394331389670
 MonoBehaviour:
   m_ObjectHideFlags: 1

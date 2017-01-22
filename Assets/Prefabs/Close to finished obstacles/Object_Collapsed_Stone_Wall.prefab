@@ -356,7 +356,7 @@ MonoBehaviour:
   nameOfObject: Collapsed Stone Wall
   soundOfObject: {fileID: 8300000, guid: d6bb906ac30e04d8ab75f1ce1787e793, type: 3}
   distToCharacter: 0
-  soundDelayReductionFactor: 10
+  soundDelayReductionFactor: 1
 --- !u!120 &120625360399460408
 LineRenderer:
   m_ObjectHideFlags: 1

@@ -329,7 +329,7 @@ MonoBehaviour:
   nameOfObject: Wooden Wall
   soundOfObject: {fileID: 8300000, guid: 1218ebe3311ae4dfea7204daebc2a714, type: 3}
   distToCharacter: 0
-  soundDelayReductionFactor: 10
+  soundDelayReductionFactor: 1
 --- !u!114 &114452545253283240
 MonoBehaviour:
   m_ObjectHideFlags: 1

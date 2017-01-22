@@ -356,7 +356,7 @@ MonoBehaviour:
   nameOfObject: Dead Tree
   soundOfObject: {fileID: 8300000, guid: 18096538d7ed14fe3971b65af7ab70b9, type: 3}
   distToCharacter: 0
-  soundDelayReductionFactor: 10
+  soundDelayReductionFactor: 1
 --- !u!120 &120337820501803900
 LineRenderer:
   m_ObjectHideFlags: 1
