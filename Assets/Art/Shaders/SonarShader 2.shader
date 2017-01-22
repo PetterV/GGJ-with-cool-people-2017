@@ -1,4 +1,4 @@
-﻿Shader "Unlit/SonarShader2" {
+﻿Shader "Unlit/SonarShader1" {
 	Properties {
 		_MainTex ("Texture", 2D) = "white" {}
 		_DistRatio ("DistanceFromChar", Float ) = 0.5
@@ -6,6 +6,7 @@
 
 		//_DissolveAmount ("Dissolve Ammount", Range(0,1) ) = 0
 		_MaxLength ("Max Length", Float ) = 10
+		_FadePoint ("Fade point", Range(0,1) ) = 0.8
 		_PulseWidth ("Width", Float ) = 2.0
 	}
 
@@ -36,6 +37,7 @@
 			sampler2D _MainTex;
 			float _DissolveAmount;
 			float _MaxLength;
+			float _FadePoint;
 			float _PulseWidth;
 			float _DistRatio;
 			float4 _PlayerPos;
@@ -58,23 +60,32 @@
 			fixed4 fragmentFunction(v2f IN) : SV_Target{
 				float maxdist = _DistRatio * _MaxLength;
 				float dist = distance( IN.worldPos, _PlayerPos );
+				
+				//fade from halfway point
+				float alphaMult = 1;
+				float fadepoint = _MaxLength * _FadePoint;
+
+				if( dist > fadepoint )
+				{
+					alphaMult = ( _MaxLength - dist ) / ( _MaxLength - fadepoint );
+				}
 
 				if ( dist < maxdist && dist > maxdist - _PulseWidth )
 				{
 					if ( dist == 0 || dist == maxdist )
 					{
-						return float4(1.0, 1.0, 1.0, 1.0 );
+						return float4(1.0, 1.0, 1.0, 1.0 * alphaMult);
 					}
 					else if ( dist > maxdist - ( _PulseWidth / 5.0 ) )
 					{
 						float minDist = maxdist - _PulseWidth / 5.0;
 						float alpha = ( ( maxdist - dist ) / ( maxdist - minDist ) );
-						return float4(1, 1.0, 1.0, alpha);
+						return float4(1, 1.0, 1.0, alpha * alphaMult);
 					}
 
 					float minDist = maxdist - _PulseWidth;
 					float alpha = 1.0 - ( ( maxdist - dist ) / ( maxdist - minDist ) );
-					return float4(1, 1.0, 1.0, alpha);
+					return float4(1, 1.0, 1.0, alpha * alphaMult );
 				}
 
 				//float distratio = clamp ( dist / _MaxLength, 0.0, 1.0 );

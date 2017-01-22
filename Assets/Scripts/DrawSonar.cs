@@ -10,6 +10,7 @@ public class DrawSonar : MonoBehaviour {
     private Mesh sonarMesh;
     public float sonarTime = 5.0f;
     public float pulseWidth = 5.0f;
+    public float fadepoint = 0.8f;
     private float currentSonarTime;
     private bool sonarDirtyFlag = false;
     public List<Vector3> sonarPoints;
@@ -55,6 +56,7 @@ public class DrawSonar : MonoBehaviour {
         mat.SetFloat( "_MaxLength", length );
         mat.SetFloat( "_PulseWidth", ( pulseWidth ) );
         mat.SetFloat( "_DistRatio", ( 0.0f ));
+        mat.SetFloat( "_FadePoint", ( 0.0f ));
         mat.SetVector( "_PlayerPos", new Vector4( charPos.x, charPos.y, charPos.z, 1.0f ) );
         
         List<Vector3> tempV = new List<Vector3>();
