@@ -7,6 +7,9 @@ public class SonarHandler : MonoBehaviour {
     private List<Vector3> sonarPoints;
     public float sonarTime = 5.0f;
     public float pulseWidth = 5.0f;
+
+    [Range( 0, 1 )]
+    public float fadepoint = 0.8f;
     public GameObject sonar;
     public GameObject sonar2;
     private bool uglyHack = false;
@@ -33,6 +36,7 @@ public class SonarHandler : MonoBehaviour {
         sonarScript.sonarTime = sonarTime;
         sonarScript.pulseWidth = pulseWidth;
         sonarScript.sonarPoints = sonarPoints;
+        sonarScript.fadepoint = fadepoint;
         sonarScript.RenderSonar( charPos, length );
         sonarPoints.Clear();
     }
