@@ -11,7 +11,7 @@ public class SonarReceiver : MonoBehaviour {
     public float distToCharacter = 0.0f;
 
 	// Stuff dealing with the delay of sounds playing
-	public float soundDelayReductionFactor = 10;
+	public float soundDelayReductionFactor = 3;
 	float soundDelay = 0.0f;
 	float maxSonarRange = 10.0f;
 	float distanceReducer;
@@ -37,12 +37,14 @@ public class SonarReceiver : MonoBehaviour {
     {
 		if ( cooldownTime < 0.01f){
 	        Debug.Log( gameObject.name + "Play Sound " + "Do stuff" );
-			distanceReducer = maxSonarRange * soundDelayReductionFactor;
-			soundDelay = distToCharacter/distanceReducer;
-			// Disabled because I'm trying to solve this with 3D sound settings:
-			//this.gameObject.GetComponent<AudioSource>().volume = distToCharacter/maxSonarRange;
+			soundDelayReductionFactor = distToCharacter/maxSonarRange;
+			soundDelay = soundDelayReductionFactor * GameObject.Find("SonarRenderer").GetComponent<DrawSonar>().sonarTime;
+
+			
 			if (!audio.isPlaying){
 				audio.PlayDelayed(soundDelay);
+				if (visualizationCircle)
+					visualizationCircle.StartTimer(soundDelay);
 			}
 
 			// If the object is an animal, fire it's animal effect!
@@ -50,8 +52,7 @@ public class SonarReceiver : MonoBehaviour {
 				this.gameObject.GetComponent<Animal>().AnimalHit();
 
 			cooldownTime = 1.0f;
-            if (visualizationCircle)
-                visualizationCircle.StartTimer();
+
 		}
     }
 }
