@@ -75,7 +75,7 @@
 
 				//float distratio = clamp ( dist / _MaxLength, 0.0, 1.0 );
 				//dissolve = lerp( 0.0, 1.0, distratio );
-				float4 texColor = float4(1.0, 1.0, 0.0, 0.0 );
+				float4 texColor = float4(0.0, 1.0, 0.0, 0.0 );
 
 				return texColor;
 			} 

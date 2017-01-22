@@ -57,8 +57,6 @@ public class Character : MonoBehaviour
         
         foreach( Ray ray in Rays )
         {
-            //Debug.DrawRay( ray.origin, ray.direction * sonarDist, Color.red, 1.0f, true);
-        
             RaycastHit rayHit;
             bool hasHitObject = Physics.Raycast( ray, out rayHit, sonarDist );
             if( rayHit.transform )
@@ -67,12 +65,15 @@ public class Character : MonoBehaviour
                 rayHit.transform.SendMessage( "OnSonarHit", SendMessageOptions.DontRequireReceiver );
                 //Debug.Log( "Hit " + rayHit.transform.gameObject.name );
             }
+            //Debug.DrawRay( ray.origin, ray.direction * ( hasHitObject ? rayHit.distance : sonarDist ), Color.red, 1.0f, true );
 
-            Vector3 vertexPoint = hasHitObject ? rayHit.point : ray.direction * sonarDist;
+            Vector3 vertexPoint = hasHitObject ? rayHit.point : transform.position + ( ray.direction.normalized * sonarDist );
             vertexPoint.y = 0.1f;
             drawSonar.AddPointToSonar( vertexPoint );
         }
-        drawSonar.RenderSonar( transform.position , sonarDist );
+        Vector3 charPos = transform.position;
+        charPos.y = 0.1f;
+        drawSonar.RenderSonar( charPos , sonarDist );
 
         return;
     }

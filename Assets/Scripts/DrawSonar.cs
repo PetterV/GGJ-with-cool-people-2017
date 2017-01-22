@@ -8,7 +8,6 @@ public class DrawSonar : MonoBehaviour {
 
     public Shader shader;
     private Mesh sonarMesh;
-    private Material lmat;
     public float sonarTime = 5.0f;
     public float pulseWidth = 5.0f;
     private float currentSonarTime;
