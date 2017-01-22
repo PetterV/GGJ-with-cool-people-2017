@@ -28,7 +28,7 @@ public class SonarReceiver : MonoBehaviour {
 		audio = this.gameObject.GetComponent<AudioSource>();
 		audio.clip = soundOfObject;
 		maxSonarRange = GameObject.Find("Character").GetComponent<Character>().sonarDist;
-		sonarTime = GameObject.Find("SonarRenderer").GetComponent<DrawSonar>().sonarTime;
+		sonarTime = GameObject.Find("SonarHandler").GetComponent<SonarHandler>().sonarTime;
 	}	
 	// Update is called once per frame
 	void Update () {
@@ -44,12 +44,12 @@ public class SonarReceiver : MonoBehaviour {
 			soundDelay = soundDelayReductionFactor * sonarTime;
 
 			
-			if (!audio.isPlaying){
+			//if (!audio.isPlaying){
 				audio.PlayDelayed(soundDelay);
 				if (visualizationCircle)
 					visualizationCircle.StartTimer(soundDelay);
 		
-			}
+			//}
 
 			// If the object is an animal, fire it's animal effect!
 			if (this.gameObject.tag == "Animal")

@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 33934683060855218}
   - component: {fileID: 23012349174922454}
   m_Layer: 0
-  m_Name: SonarRenderer
+  m_Name: SonarRenderer 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,7 +55,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: a1af6cf826b8fba4e81c5f192af3f893, type: 2}
+  - {fileID: 2100000, guid: 0dbdd9c09d082f3479374d043ff55628, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -95,4 +95,4 @@ MonoBehaviour:
   sonarTime: 3
   pulseWidth: 1
   sonarPoints: []
-  mat: {fileID: 2100000, guid: a1af6cf826b8fba4e81c5f192af3f893, type: 2}
+  mat: {fileID: 2100000, guid: 0dbdd9c09d082f3479374d043ff55628, type: 2}
