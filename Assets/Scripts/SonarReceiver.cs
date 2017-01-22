@@ -27,6 +27,7 @@ public class SonarReceiver : MonoBehaviour {
         visualizationCircle = this.gameObject.GetComponentInChildren<CircleDrawer>();
 		audio = this.gameObject.GetComponent<AudioSource>();
 		audio.clip = soundOfObject;
+		maxSonarRange = GameObject.Find("Character").GetComponent<Character>().sonarDist;
 		sonarTime = GameObject.Find("SonarRenderer").GetComponent<DrawSonar>().sonarTime;
 	}	
 	// Update is called once per frame
