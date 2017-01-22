@@ -6,6 +6,7 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     public float moveSpeed = 5;
+    public float sonarCoolDown = 2.0f;
     public float rotationSpeed = 10;
 
     public int numRays = 20;
@@ -17,6 +18,8 @@ public class Character : MonoBehaviour
 
     private DrawSonar drawSonar;
     private CharacterController CC;
+
+    private float timeStamp;
     // Use this for initialization
     void Awake()
     {
@@ -45,12 +48,20 @@ public class Character : MonoBehaviour
 
     public void BigSonarPulse()
     {
-        SonarPulse( sonarWidthDegreesBig );
+        if( Time.time > timeStamp )
+        {
+            timeStamp = Time.time + sonarCoolDown;
+            SonarPulse( sonarWidthDegreesBig );
+        }
     }
 
     public void SmallSonarPulse()
     {
-        SonarPulse( sonarWidthDegreesSmall );
+        if( Time.time > timeStamp )
+        {
+            timeStamp = Time.time + sonarCoolDown;
+            SonarPulse( sonarWidthDegreesSmall );
+        }
     }
 
 
