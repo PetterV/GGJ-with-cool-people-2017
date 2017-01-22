@@ -78,15 +78,29 @@ public class Character : MonoBehaviour
             Ray ray = new Ray( origin, direction );
             Rays.Add( ray );
         }
-        
+
+        List<Transform> hitObj = new List<Transform>();
         foreach( Ray ray in Rays )
         {
             RaycastHit rayHit;
             bool hasHitObject = Physics.Raycast( ray, out rayHit, sonarDist );
-            if( rayHit.transform )
+
+            if( hasHitObject )
             {
-                rayHit.collider.gameObject.GetComponent<SonarReceiver>().distToCharacter = rayHit.distance;
-                rayHit.transform.SendMessage( "OnSonarHit", SendMessageOptions.DontRequireReceiver );
+                Transform curTrans = rayHit.collider.transform;
+
+                if ( hitObj.Contains( curTrans ) && curTrans.gameObject.GetComponent<SonarReceiver>().distToCharacter > rayHit.distance )
+                {  
+                    curTrans.gameObject.GetComponent<SonarReceiver>().distToCharacter = rayHit.distance;
+                    curTrans.gameObject.GetComponent<SonarReceiver>().hitpos = rayHit.point;
+                }
+                else
+                {
+                    curTrans.gameObject.GetComponent<SonarReceiver>().distToCharacter = rayHit.distance;
+                    curTrans.gameObject.GetComponent<SonarReceiver>().hitpos = rayHit.point;
+                    hitObj.Add( curTrans );
+                }
+
                 //Debug.Log( "Hit " + rayHit.transform.gameObject.name );
             }
             //Debug.DrawRay( ray.origin, ray.direction * ( hasHitObject ? rayHit.distance : sonarDist ), Color.red, 1.0f, true );
@@ -95,6 +109,12 @@ public class Character : MonoBehaviour
             vertexPoint.y = 0.1f;
             drawSonar.AddPointToSonar( vertexPoint );
         }
+
+        foreach( Transform t in hitObj )
+        {
+            t.SendMessage( "OnSonarHit", SendMessageOptions.DontRequireReceiver );
+        }
+
         Vector3 charPos = transform.position;
         charPos.y = 0.1f;
         drawSonar.CreateSonar( charPos , sonarDist );
