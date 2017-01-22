@@ -9,7 +9,7 @@ public class CollisionHandling : MonoBehaviour {
 	public AudioClip[] crashSounds;
 
 	void OnTriggerEnter (Collider obstacle){
-		if (willReset == false){
+		if (willReset == false && obstacle.gameObject.tag != "Animal"){
 			Debug.Log("I collided! thing hit is: " + obstacle.gameObject.name);
 			willReset = true;
 			int random = Random.Range(0, 3);

@@ -216,17 +216,5 @@ public class CampaignManager : MonoBehaviour {
 				animalText.GetComponent<Text>().text = "Your JOURNEY is at an end.\nFifth Wave Feminism rules the land.\nIt is time to look to new horizons.\n\nClick \"Replay\" for Sixth Wave Feminism gameplay.";
 			}
 		}
-
-		if (currentCampaignTargetOrder == 1 && isWaitingToChangeTo == 1){
-
-			//Notification about completion of this stage
-			animalText.GetComponent<Text>().text = "";
-			if (changeTimer > messageDuration){
-				//Descriptiong of next target
-				animalText.GetComponent<Text>().text = "";
-				isWaitingToChangeTo = isWaitingToChangeTo + 1;
-				changeTimer = 0f;
-			}
-		}
 	}
 }
