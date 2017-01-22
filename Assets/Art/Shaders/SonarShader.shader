@@ -63,23 +63,23 @@
 				{
 					if ( dist == 0 || dist == maxdist )
 					{
-						return float4(0.0, 1.0, 1.0, 1.0 );
+						return float4(1.0, 1.0, 1.0, 1.0 );
 					}
 					else if ( dist > maxdist - ( _PulseWidth / 5.0 ) )
 					{
 						float minDist = maxdist - _PulseWidth / 5.0;
 						float alpha = ( ( maxdist - dist ) / ( maxdist - minDist ) );
-						return float4(0, 1.0, 1.0, alpha);
+						return float4(1, 1.0, 1.0, alpha);
 					}
 
 					float minDist = maxdist - _PulseWidth;
 					float alpha = 1.0 - ( ( maxdist - dist ) / ( maxdist - minDist ) );
-					return float4(0, 1.0, 1.0, alpha);
+					return float4(1, 1.0, 1.0, alpha);
 				}
 
 				//float distratio = clamp ( dist / _MaxLength, 0.0, 1.0 );
 				//dissolve = lerp( 0.0, 1.0, distratio );
-				float4 texColor = float4(0.0, 1.0, 0.0, 0.0 );
+				float4 texColor = float4(1.0, 1.0, 0.0, 0.0 );
 
 				return texColor;
 			} 
