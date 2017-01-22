@@ -15,6 +15,7 @@ public class DrawSonar : MonoBehaviour {
     private List<Vector3> sonarPoints;
 
     Material mat;
+    Mesh mesh;    
     void Awake()
     {
         sonarMesh = new Mesh();
@@ -52,7 +53,7 @@ public class DrawSonar : MonoBehaviour {
     public void RenderSonar( Vector3 charPos, float length )
     {
         mat.SetFloat( "_MaxLength", length );
-        mat.SetFloat( "_DistRatio", 0.2f );
+        mat.SetFloat( "_DistRatio", ( 0.0f ));
         mat.SetVector( "_PlayerPos", new Vector4( charPos.x, charPos.y, charPos.z, 1.0f ) );
         
         List<Vector3> tempV = new List<Vector3>();
