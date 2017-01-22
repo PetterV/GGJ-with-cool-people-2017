@@ -16,7 +16,7 @@ public class Character : MonoBehaviour
     [HideInInspector]
     public float turnAxisInput;
 
-    private DrawSonar drawSonar;
+    private SonarHandler drawSonar;
     private CharacterController CC;
 
     private float timeStamp;
@@ -29,7 +29,7 @@ public class Character : MonoBehaviour
 
     void Start()
     {
-        drawSonar = FindObjectOfType<DrawSonar>();
+        drawSonar = FindObjectOfType<SonarHandler>();
     }
 
     // Update is called once per frame
@@ -97,7 +97,7 @@ public class Character : MonoBehaviour
         }
         Vector3 charPos = transform.position;
         charPos.y = 0.1f;
-        drawSonar.RenderSonar( charPos , sonarDist );
+        drawSonar.CreateSonar( charPos , sonarDist );
 
         return;
     }
