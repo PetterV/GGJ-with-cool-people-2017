@@ -15,7 +15,6 @@ public class DrawSonar : MonoBehaviour {
     private List<Vector3> sonarPoints;
 
     Material mat;
-    Mesh mesh;    
     void Awake()
     {
         sonarMesh = new Mesh();

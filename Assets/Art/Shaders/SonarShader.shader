@@ -56,21 +56,25 @@
 			//Fragment
 			//Color it in
 			fixed4 fragmentFunction(v2f IN) : SV_Target{
-				float desiredDist = _DistRatio * _MaxLength;
+				float maxdist = _DistRatio * _MaxLength;
 				float dist = distance( IN.worldPos, _PlayerPos );
 
-				if ( dist < desiredDist && dist > desiredDist - _PulseWidth )
+				if ( dist < maxdist && dist > maxdist - _PulseWidth )
 				{
-					if ( dist == 0 )
+					if ( dist == 0 || dist == maxdist )
 					{
 						return float4(0.0, 1.0, 1.0, 1.0 );
 					}
+					else if ( dist > maxdist - 0.2 )
+					{
+						float minDist = maxdist - 0.2;
+						float alpha = ( ( maxdist - dist ) / ( maxdist - minDist ) );
+						return float4(0, 1.0, 1.0, alpha);
+					}
 
-					float howfarfrom = _PulseWidth / desiredDist - dist;
-
-					float ratio = ( desiredDist - dist );
-					float alpha = lerp(0.0, 1.0, ratio );
-					return float4(0, 1.0, 1.0, alpha );
+					float minDist = maxdist - _PulseWidth;
+					float alpha = 1.0 - ( ( maxdist - dist ) / ( maxdist - minDist ) );
+					return float4(0, 1.0, 1.0, alpha);
 				}
 
 				//float distratio = clamp ( dist / _MaxLength, 0.0, 1.0 );
