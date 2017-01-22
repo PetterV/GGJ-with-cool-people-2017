@@ -90,7 +90,7 @@ Material:
       second: 0.56
     - first:
         name: _DistRatio
-      second: 0.99223113
+      second: 0.8348615
     - first:
         name: _Distance
       second: 0
@@ -160,4 +160,4 @@ Material:
       second: {r: 0, g: 0, b: 0, a: 1}
     - first:
         name: _PlayerPos
-      second: {r: 0, g: 0.1, b: 0.953144, a: 1}
+      second: {r: -6.6770473, g: 0.1, b: 32.277885, a: 1}
