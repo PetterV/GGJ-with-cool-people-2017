@@ -9,6 +9,10 @@ public class CollisionHandling : MonoBehaviour {
 	public AudioClip[] crashSounds;
 
 	void OnTriggerEnter (Collider obstacle){
+		// If the object is an animal, fire it's animal effect!
+		if (obstacle.gameObject.tag == "Animal"){
+			obstacle.gameObject.GetComponent<Animal>().AnimalHit();
+		}
 		if (willReset == false && obstacle.gameObject.tag != "Animal"){
 			Debug.Log("I collided! thing hit is: " + obstacle.gameObject.name);
 			willReset = true;

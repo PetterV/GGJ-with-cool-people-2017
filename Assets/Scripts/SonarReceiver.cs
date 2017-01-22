@@ -59,9 +59,6 @@ public class SonarReceiver : MonoBehaviour {
 
             //}
 
-            // If the object is an animal, fire it's animal effect!
-            if (this.gameObject.tag == "Animal")
-				this.gameObject.GetComponent<Animal>().AnimalHit();
 
 			cooldownTime = 1.0f;
 

@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 3f254397e8ec04af0be408bb3e16624b
+timeCreated: 1485109066
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: MrsEavesRoman
+  fontNames:
+  - MrsEavesRoman
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

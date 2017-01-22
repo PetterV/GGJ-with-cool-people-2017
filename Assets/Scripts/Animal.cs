@@ -22,21 +22,21 @@ public class Animal : MonoBehaviour {
 	public void AnimalHit ()
 	{
 		currentTarget = GameObject.Find("GameManager").GetComponent<CampaignManager>().currentCampaignTargetOrder;
-		if ( myCampaignTargetOrder < currentTarget){
+	//	if ( myCampaignTargetOrder < currentTarget){
 			//Give real target message
-		}
-		else if ( myCampaignTargetOrder == currentTarget){
-			feminismCount = feminismCount + 1;
-		}
-		else if ( myCampaignTargetOrder > currentTarget){
+	//	}
+	//	else if ( myCampaignTargetOrder == currentTarget){
+	//		feminismCount = feminismCount + 1;
+	//	}
+	//	else if ( myCampaignTargetOrder > currentTarget){
 			//Give real target message
-		}
+	//	}
 
-		if (feminismCount >= feminismTargetValue){
+	//	if (feminismCount >= feminismTargetValue){
 			//Add success display etc. here!
 			if (myCampaignTargetOrder == currentTarget){
 				GameObject.Find("GameManager").GetComponent<CampaignManager>().currentCampaignTargetOrder = currentTarget + 1;
 			}
-		} 
+	//	}
 	}
 }

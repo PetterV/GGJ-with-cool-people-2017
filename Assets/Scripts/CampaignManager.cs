@@ -18,11 +18,6 @@ public class CampaignManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//Remove haxxor cheat for "release"
-		if (Input.GetKeyDown("u")){
-			currentCampaignTargetOrder = currentCampaignTargetOrder + 1;
-		}
-		//
 		if (currentCampaignTargetOrder == isWaitingToChangeTo){
 			changeTimer = changeTimer + Time.deltaTime;
 		}

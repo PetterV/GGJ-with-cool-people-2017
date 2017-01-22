@@ -90,7 +90,7 @@ Material:
       second: 0.56
     - first:
         name: _DistRatio
-      second: 0.99742234
+      second: 0.99223113
     - first:
         name: _Distance
       second: 0
@@ -104,6 +104,9 @@ Material:
         name: _DstBlend
       second: 10
     - first:
+        name: _FadePoint
+      second: 0
+    - first:
         name: _GlossMapScale
       second: 1
     - first:
@@ -114,7 +117,7 @@ Material:
       second: 1
     - first:
         name: _MaxLength
-      second: 30
+      second: 20
     - first:
         name: _Metallic
       second: 0
@@ -157,4 +160,4 @@ Material:
       second: {r: 0, g: 0, b: 0, a: 1}
     - first:
         name: _PlayerPos
-      second: {r: 0, g: 0.1, b: 0, a: 1}
+      second: {r: 0, g: 0.1, b: 0.953144, a: 1}

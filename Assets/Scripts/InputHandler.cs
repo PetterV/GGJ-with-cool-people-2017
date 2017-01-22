@@ -26,5 +26,7 @@ public class InputHandler : MonoBehaviour {
                 character.SmallSonarPulse();
             }
         }
+		if (Input.GetKey("escape"))
+			Application.Quit();
     }
 }
