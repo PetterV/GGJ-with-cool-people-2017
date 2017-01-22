@@ -65,9 +65,9 @@
 					{
 						return float4(0.0, 1.0, 1.0, 1.0 );
 					}
-					else if ( dist > maxdist - 0.2 )
+					else if ( dist > maxdist - ( _PulseWidth / 5.0 ) )
 					{
-						float minDist = maxdist - 0.2;
+						float minDist = maxdist - _PulseWidth / 5.0;
 						float alpha = ( ( maxdist - dist ) / ( maxdist - minDist ) );
 						return float4(0, 1.0, 1.0, alpha);
 					}
