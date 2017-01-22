@@ -90,7 +90,7 @@ Material:
       second: 0.56
     - first:
         name: _DistRatio
-      second: 0.3810331
+      second: 0.99681264
     - first:
         name: _Distance
       second: 0
@@ -114,7 +114,7 @@ Material:
       second: 1
     - first:
         name: _MaxLength
-      second: 20
+      second: 30
     - first:
         name: _Metallic
       second: 0
@@ -132,7 +132,7 @@ Material:
       second: 0
     - first:
         name: _PulseWidth
-      second: 5
+      second: 2
     - first:
         name: _SmoothnessTextureChannel
       second: 0
@@ -157,4 +157,4 @@ Material:
       second: {r: 0, g: 0, b: 0, a: 1}
     - first:
         name: _PlayerPos
-      second: {r: 0, g: 0.1, b: 0.2641863, a: 1}
+      second: {r: 0, g: 0.1, b: 0, a: 1}
